@@ -37,8 +37,25 @@ print(inr_list)
 
 plt.plot(range(1,15), inr_list)
 
-plt.xlabel("Value of K")
-plt.ylabel("Inertia")
+plt.xlabel("Feaure 1")
+plt.ylabel("Feature 2")
 plt.title("K vs Interia")
 
 plt.show()
+
+from sklearn.cluster import DBSCAN
+
+dbs = DBSCAN(eps = 0.1, min_samples=3)
+
+dbs.fit(df)
+
+cluster = dbs.labels_
+
+print(cluster)
+
+from sklearn.metrics import silhouette_score
+
+from sklearn.metrics import silhouette_score
+
+silhouette_score(df,cluster)
+
